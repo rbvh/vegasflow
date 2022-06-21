@@ -2,9 +2,10 @@
 from setuptools import setup, find_packages
 import os
 import re
+import sys
 
+requirements = ['joblib', 'numpy'] + (['tensorflow-macos'] if sys.platform == 'darwin' else ['tensorflow'])
 
-requirements = ['joblib', 'numpy', 'tensorflow']
 PACKAGE = 'vegasflow'
 
 def get_version():
